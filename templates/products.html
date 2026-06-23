@@ -1,0 +1,63 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<form action="/search" method="GET" class="mb-3">
+
+    <input type="text"
+           name="keyword"
+           placeholder="Search Product"
+           class="form-control">
+
+</form>
+
+<h2>Products</h2>
+
+<div class="row">
+
+{% for product in products %}
+
+<div class="col-md-4">
+
+    <div class="card mb-4">
+
+        <img
+        src="/uploads/{{ product[4] }}"
+        height="250"
+        class="card-img-top">
+
+        <div class="card-body">
+
+            <h5>{{ product[1] }}</h5>
+
+            <p>{{ product[2] }}</p>
+
+            <h4>₹ {{ product[3] }}</h4>
+
+            <a
+            href="/add_to_cart/{{ product[0] }}"
+            class="btn btn-primary">
+                Add To Cart
+            </a>
+
+            <a href="/edit_product/{{ product[0] }}"
+            class="btn btn-warning">
+                Edit
+            </a>
+            
+            <a href="/delete_product/{{ product[0] }}"
+            class="btn btn-danger">
+                Delete
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+{% endblock %}

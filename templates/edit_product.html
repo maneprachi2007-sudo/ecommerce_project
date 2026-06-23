@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+<h2>Edit Product</h2>
+
+<form method="POST">
+
+    <input type="text"
+           name="product_name"
+           value="{{ product[1] }}"
+           class="form-control mb-3">
+
+    <textarea name="description"
+              class="form-control mb-3">{{ product[2] }}</textarea>
+
+    <input type="number"
+           name="price"
+           value="{{ product[3] }}"
+           class="form-control mb-3">
+
+    <button class="btn btn-success">
+        Update Product
+    </button>
+
+</form>
+
+{% endblock %}
