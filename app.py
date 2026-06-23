@@ -11,10 +11,11 @@ UPLOAD_FOLDER = "uploads"
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 connection = pymysql.connect(
-    host="localhost",
-    user="root",
-    password="maneprachi2007",
+    host="gateway01.ap-southeast-1.prod.aws.tidbcloud.com",
+    user="jv3Yu2NL1ExHgCF.root",
+    password="XmrYNrxXiEuoIc03",
     database="ecommerce_project"
+    port=4000
 )
 
 # Home page
